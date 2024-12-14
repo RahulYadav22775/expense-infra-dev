@@ -5,7 +5,7 @@ module "app_alb" {
   vpc_id  = local.vpc_id
   subnets = local.private_subnet_id
   internal = true
-  security_groups = [data.aws_ssm_parameter.app_alb_sg-id.value]
+  security_groups = [data.aws_ssm_parameter.app_alb_sg_id.value]
   create_security_group = false
   enable_deletion_protection = false
 
@@ -18,7 +18,7 @@ module "app_alb" {
   )
 }
 
-resource "aws_lb_listener" "app_alb" {
+resource "aws_lb_listener" "http" {
   load_balancer_arn = module.app_alb.arn
   port              = "80"
   protocol          = "HTTP"

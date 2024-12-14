@@ -15,12 +15,12 @@ variable "common_tags" {
     }
 }
 
-variable "backend_tags" {
-    default = {
-        Component = "backend"
-    }
+
+
+variable "domain_name" {
+    default = "gopi-81s.online"
 }
 
-variable "zone_name" {
-    default = "gopi-81s.online"
+variable "zone_id" {
+    default = "Z0899670238D02XK0M9FO"
 }
